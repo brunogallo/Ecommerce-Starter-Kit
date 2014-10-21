@@ -1,0 +1,31 @@
+//Layout Config.
+@import 'variables';
+@import 'typography';
+
+// Custom styles
+body {
+	font-family: 'Lato-regular', sans-serif;
+	color: #444444;
+	text-align: left;
+}
+
+*,
+*:before,
+*:after {
+    @include box-sizing(border-box);
+}
+
+.container{
+	@include center;
+}
+
+a {
+	color: #444444;
+		&:hover,
+		&:focus{
+			color: $light-blue;
+		}
+}
+// Layout
+@import 'header';
+@import 'footer';

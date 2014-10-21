@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "name": "Padrão Front End",
+  "launch_path": "/index.html",
+  "description": "A front-end structure that helps you build fast projects.",
+  "icons": {
+    "128": "/assets/icons/icon-128x128.png"
+  },
+  "developer": {
+    "name": "Bruno Gallo",
+    "url": "http://brunogallo.github.io/padrao-front-end/"
+  },
+  "installs_allowed_from": [
+    "*"
+  ],
+  "default_locale": "en",
+  "permissions": {
+  }
+}

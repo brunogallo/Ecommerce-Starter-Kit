@@ -1,0 +1,248 @@
+/*  Syntax Quick Reference -------------------------- column($ratios: 1, $offset: 0, $cycle: 0, $uncycle: 0, $gutter: $jeet-gutter) span($ratio: 1, $offset: 0) shift($ratios: 0, $col_or_span: column, $gutter: $jeet-gutter) unshift() edit() center($max_width: 1410px, $pad: 0) stack($pad: 0, $align: false) unstack() align($direction: both) cf()
+*/
+/** Grid settings. All values are defaults and can therefore be easily overidden. */
+/** List functions courtesy of the wonderful folks at Team Sass. Check out their awesome grid: Singularity. */
+/** Get  percentage from a given ratio. @param {number} [$ratio=1] - The column ratio of the element. @returns {number} - The percentage value. */
+/** Work out the column widths based on the ratio and gutter sizes. @param {number} [$ratios=1] - The column ratio of the element. @param {number} [$gutter=$jeet-gutter] - The gutter for the column. @returns {list} $width $gutter - A list containing the with and gutter for the element. */
+/** Get the set layout direction for the project. @returns {string} $direction - The layout direction. */
+/** Replace a specified list value with a new value (uses built in set-nth() if available) @param {list} $list - The list of values you want to alter. @param {number} $index - The index of the list item you want to replace. @param {*} $value - The value you want to replace $index with. @returns {list} $list - The list with the value replaced or removed. @warn if an invalid index is supplied. */
+/** Reverse a list (progressively enhanced for Sass 3.3) @param {list} $list - The list of values you want to reverse. @returns {list} $result - The reversed list. */
+/** Get the opposite direction to a given value. @param {string} $dir - The direction you want the opposite of. @returns {string} - The opposite direction to $dir. @warn if an incorrect string is provided. */
+/** Style an element as a column with a gutter. @param {number} [$ratios=1] - A width relative to its container as a fraction. @param {number} [$offset=0] - A offset specified as a fraction (see $ratios). @param {number} [$cycle=0] - Easily create an nth column grid where $cycle equals the number of columns. @param {number} [$uncycle=0] - Undo a previous cycle value to allow for a new one. @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width. */
+/** An alias for the column mixin. @param [$args...] - All arguments get passed through to column(). */
+/** Get the width of a column and nothing else. @param {number} [$ratios=1] - A width relative to its container as a fraction. @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width. */
+/** Get the gutter size of a column and nothing else. @param {number} [ratios=1] - A width relative to its container as a fraction. @param {number} [gutter=jeet.gutter] - Specify the gutter width as a percentage of the containers width. */
+/** An alias for the column-width function. @param [$args...] - All arguments get passed through to column(). */
+/** An alias for the column-gutter function. @param [$args...] - All arguments get passed through to column(). */
+/** Style an element as a column without any gutters for a seamless row. @param {number} [$ratios=1] - A width relative to its container as a fraction. @param {number} [$offset=0] - A offset specified as a fraction (see $ratios). @param {number} [cycle=0] - Easily create an nth column grid where cycle equals the number of columns. @param {number} [uncycle=0] - Undo a previous cycle value to allow for a new one. */
+/** Reorder columns without altering the HTML. @param {number} [$ratios=0] - Specify how far along you want the element to move. @param {string} [$col-or-span=column] - Specify whether the element has a gutter or not. @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width. */
+/** Reset an element that has had shift() applied to it. */
+/** View the grid and its layers for easy debugging. @param {string} [$color=black] - The background tint applied. @param {boolean} [$important=false] - Whether to apply the style as !important. */
+/** Alias for edit(). */
+/** Horizontally center an element. @param {number} [$max-width=1410px] - The max width the element can be. @param {number} [$pad=0] - Specify the element's left and right padding. */
+/** Uncenter an element. */
+/** Stack an element so that nothing is either side of it. @param {number} [$pad=0] - Specify the element's left and right padding. @param {boolean/string} [$align=false] - Specify the text align for the element. */
+/** Unstack an element. */
+/** Center an element on either or both axes. @requires A parent container with relative positioning. @param {string} [$direction=both] - Specify which axes to center the element on. */
+/** Apply a clearfix to an element. */
+/* normalize-scss 3.0.1+normalize.3.0.1 | MIT/GPLv2 License | bit.ly/normalize-scss */
+/* Base ========================================================================== */
+/** Establish a vertical rhythm unit using $base-font-size, $base-line-height, and $rhythm-unit variables. Also, correct text resizing oddly in IE 6/7 when body `font-size` is set using `em` units. */
+html { font-size: 100%; line-height: 1.5em; }
+
+/** 1. Set default font family to sans-serif. 2. Prevent iOS text size adjust after orientation change, without disabling user zoom. */
+html { font-family: sans-serif; /* 1 */ -ms-text-size-adjust: 100%; /* 2 */ -webkit-text-size-adjust: 100%; /* 2 */ }
+
+/** Remove default margin. */
+body { margin: 0; }
+
+/* HTML5 display definitions ========================================================================== */
+/** Correct `block` display not defined for any HTML5 element in IE 8/9. Correct `block` display not defined for `details` or `summary` in IE 10/11 and Firefox. Correct `block` display not defined for `main` in IE 11. */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block; }
+
+/** 1. Correct `inline-block` display not defined in IE 8/9. 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera. */
+audio, canvas, progress, video { display: inline-block; /* 1 */ *display: inline; *zoom: 1; vertical-align: baseline; /* 2 */ }
+
+/** Prevent modern browsers from displaying `audio` without controls. Remove excess height in iOS 5 devices. */
+audio:not([controls]) { display: none; height: 0; }
+
+/** Address `[hidden]` styling not present in IE 8/9/10. */
+[hidden] { display: none; }
+
+/** Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22. */
+template { display: none; }
+
+/* Links ========================================================================== */
+/** Remove the gray background color from active links in IE 10. */
+a { background: transparent; }
+
+/** Improve readability when focused and also mouse hovered in all browsers. */
+a:active, a:hover { outline: 0; }
+
+/* Text-level semantics ========================================================================== */
+/** Address styling not present in IE 8/9/10/11, Safari, and Chrome. */
+abbr[title] { border-bottom: 1px dotted; }
+
+/** Address style set to `bolder` in Firefox 4+, Safari, and Chrome. */
+b, strong { font-weight: bold; }
+
+/** Set 1 unit of vertical rhythm on the top and bottom margin. */
+blockquote { margin: 1.5rem 0; }
+
+/** Address styling not present in Safari and Chrome. */
+dfn { font-style: italic; }
+
+/** Address variable `h1` font-size and margin within `section` and `article` contexts in Firefox 4+, Safari, and Chrome. */
+h1 { /* Set the font-size and line-height while keeping a proper vertical rhythm. */ font-size: 32px; font-size: 2rem; line-height: 48px; line-height: 3rem; /* Set 1 unit of vertical rhythm on the top and bottom margins. */ margin-top: 24px; margin-top: 1.5rem; margin-bottom: 24px; margin-bottom: 1.5rem; }
+
+h2 { font-size: 24px; font-size: 1.5rem; line-height: 48px; line-height: 3rem; margin-top: 24px; margin-top: 1.5rem; margin-bottom: 24px; margin-bottom: 1.5rem; }
+
+h3 { font-size: 19px; font-size: 1.17rem; line-height: 24px; line-height: 1.5rem; margin-top: 24px; margin-top: 1.5rem; margin-bottom: 24px; margin-bottom: 1.5rem; }
+
+h4 { font-size: 16px; font-size: 1rem; line-height: 24px; line-height: 1.5rem; margin-top: 24px; margin-top: 1.5rem; margin-bottom: 24px; margin-bottom: 1.5rem; }
+
+h5 { font-size: 13px; font-size: 0.83rem; line-height: 24px; line-height: 1.5rem; margin-top: 24px; margin-top: 1.5rem; margin-bottom: 24px; margin-bottom: 1.5rem; }
+
+h6 { font-size: 11px; font-size: 0.67rem; line-height: 24px; line-height: 1.5rem; margin-top: 24px; margin-top: 1.5rem; margin-bottom: 24px; margin-bottom: 1.5rem; }
+
+/** Address styling not present in IE 8/9. */
+mark { background: #ff0; color: #000; }
+
+/** Set 1 unit of vertical rhythm on the top and bottom margin. */
+p, pre { margin: 1.5rem 0; }
+
+/** Address inconsistent and variable font size in all browsers. */
+small { font-size: 80%; }
+
+/** Prevent `sub` and `sup` affecting `line-height` in all browsers. */
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+
+sup { top: -0.5em; }
+
+sub { bottom: -0.25em; }
+
+/* Lists ========================================================================== */
+/** Address margins set differently in IE 6/7. */
+dl, menu, ol, ul { margin: 0; }
+
+dd { margin: 0 0 0 0; }
+
+/** Address paddings set differently in IE 6/7. */
+menu, ol, ul { padding: 0 0 0 0; }
+
+/** Correct list images handled incorrectly in IE 7. */
+nav ul, nav ol { list-style: none; list-style-image: none; }
+
+/* Embedded content ========================================================================== */
+/** Remove border when inside `a` element in IE 8/9/10. */
+img { border: 0; /* Improve image quality when scaled in IE 7. */ -ms-interpolation-mode: bicubic; }
+
+/** Correct overflow not hidden in IE 9/10/11. */
+svg:not(:root) { overflow: hidden; }
+
+/* Grouping content ========================================================================== */
+/** Address margin not present in IE 8/9 and Safari. */
+figure { margin: 1.5rem 0; }
+
+/** Address differences between Firefox and other browsers. */
+hr { -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; height: 0; }
+
+/** Contain overflow in all browsers. */
+pre { overflow: auto; }
+
+/** Address odd `em`-unit font size rendering in all browsers. */
+code, kbd, pre, samp { font-family: monospace, monospace; font-size: 1em; }
+
+/* Forms ========================================================================== */
+/** Known limitation: by default, Chrome and Safari on OS X allow very limited styling of `select`, unless a `border` property is set. */
+/** Correct margin displayed oddly in IE 6/7. */
+form { margin: 0; }
+
+/** 1. Correct color not being inherited. Known issue: affects color of disabled elements. 2. Correct font properties not being inherited. 3. Address margins set differently in Firefox 4+, Safari, and Chrome. 4. Address `font-family` inconsistency between `textarea` and other form in IE 7 5. Improve appearance and consistency with IE 6/7. */
+button, input, optgroup, select, textarea { color: inherit; /* 1 */ font: inherit; /* 2 */ margin: 0; /* 3 */ *font-family: sans-serif; /* 4 */ *vertical-align: middle; /* 5 */ }
+
+/** Address `overflow` set to `hidden` in IE 8/9/10/11. */
+button { overflow: visible; }
+
+/** Address inconsistent `text-transform` inheritance for `button` and `select`. All other form control elements do not inherit `text-transform` values. Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera. Correct `select` style inheritance in Firefox. */
+button, select { text-transform: none; }
+
+/** 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio` and `video` controls. 2. Correct inability to style clickable `input` types in iOS. 3. Improve usability and consistency of cursor style between image-type `input` and others. 4. Remove inner spacing in IE 7 without affecting normal text inputs. Known issue: inner spacing remains in IE 6. */
+button, html input[type="button"], input[type="reset"], input[type="submit"] { -webkit-appearance: button; /* 2 */ cursor: pointer; /* 3 */ *overflow: visible; /* 4 */ }
+
+/** Re-set default cursor for disabled elements. */
+button[disabled], html input[disabled] { cursor: default; }
+
+/** Remove inner padding and border in Firefox 4+. */
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+
+/** Address Firefox 4+ setting `line-height` on `input` using `!important` in the UA stylesheet. */
+input { line-height: normal; }
+
+/** It's recommended that you don't attempt to style these elements. Firefox's implementation doesn't respect box-sizing, padding, or width.  1. Address box sizing set to `content-box` in IE 8/9/10. 2. Remove excess padding in IE 8/9/10. 3. Remove excess padding in IE 7. Known issue: excess padding remains in IE 6. */
+input[type="checkbox"], input[type="radio"] { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; /* 1 */ padding: 0; /* 2 */ *height: 13px; /* 3 */ *width: 13px; /* 3 */ }
+
+/** Fix the cursor style for Chrome's increment/decrement buttons. For certain `font-size` values of the `input`, it causes the cursor style of the decrement button to change from `default` to `text`. */
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button { height: auto; }
+
+/** 1. Address `appearance` set to `searchfield` in Safari and Chrome. 2. Address `box-sizing` set to `border-box` in Safari and Chrome (include `-moz` to future-proof). */
+input[type="search"] { -webkit-appearance: textfield; /* 1 */ -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; /* 2 */ /** Remove inner padding and search cancel button in Safari and Chrome on OS X. Safari (but not Chrome) clips the cancel button when the search input has padding (and `textfield` appearance). */ }
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+
+/** Define consistent border, margin, and padding. */
+fieldset { margin: 0 2px; /* Apply borders and padding that keep the vertical rhythm. */ border-color: #c0c0c0; border-top-width: 1px; border-top-width: 0.0625rem; border-top-style: solid; padding-top: 7px; padding-top: 0.4625rem; border-bottom-width: 1px; border-bottom-width: 0.0625rem; border-bottom-style: solid; padding-bottom: 15px; padding-bottom: 0.9125rem; border-left-width: 1px; border-left-width: 0.0625rem; border-left-style: solid; padding-left: 14px; padding-left: 0.875rem; border-right-width: 1px; border-right-width: 0.0625rem; border-right-style: solid; padding-right: 14px; padding-right: 0.875rem; }
+
+/** 1. Correct `color` not being inherited in IE 8/9/10/11. 2. Remove padding so people aren't caught out if they zero out fieldsets. 3. Correct alignment displayed oddly in IE 6/7. */
+legend { border: 0; /* 1 */ padding: 0; /* 2 */ *margin-left: -7px; /* 3 */ }
+
+/** Remove default vertical scrollbar in IE 8/9/10/11. */
+textarea { overflow: auto; }
+
+/** Don't inherit the `font-weight` (applied by a rule above). NOTE: the default cannot safely be changed in Chrome and Safari on OS X. */
+optgroup { font-weight: bold; }
+
+/* Tables ========================================================================== */
+/** Remove most spacing between table cells. */
+table { border-collapse: collapse; border-spacing: 0; }
+
+td, th { padding: 0; }
+
+@font-face { font-family: Lato-regular; font-weight: normal; font-style: normal; src: url("../fonts/Lato/lato-regular-webfont.eot"); src: url("../fonts/Lato/lato-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Lato/lato-regular-webfont.woff") format("woff"), url("../fonts/Lato/lato-regular-webfont.ttf") format("truetype"), url("../fonts/Lato/lato-regular-webfont.svg#Lato-regular") format("svg"); }
+@font-face { font-family: Lato-bold; font-weight: bold; font-style: normal; src: url("../fonts/Lato/lato-bold-webfont.eot"); src: url("../fonts/Lato/lato-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Lato/lato-bold-webfont.woff") format("woff"), url("../fonts/Lato/lato-bold-webfont.ttf") format("truetype"), url("../fonts/Lato/lato-bold-webfont.svg#Lato-bold") format("svg"); }
+@font-face { font-family: Lato-light; font-weight: normal; font-style: normal; src: url("../fonts/Lato/lato-light-webfont.eot"); src: url("../fonts/Lato/lato-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Lato/lato-light-webfont.woff") format("woff"), url("../fonts/Lato/lato-light-webfont.ttf") format("truetype"), url("../fonts/Lato/lato-light-webfont.svg#Lato-light") format("svg"); }
+body { font-family: 'Lato-regular', sans-serif; color: #444444; text-align: left; }
+
+*, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+.container { *zoom: 1; width: auto; max-width: 1410px; float: none; display: block; margin-right: auto; margin-left: auto; padding-left: 0; padding-right: 0; }
+.container:before, .container:after { content: ''; display: table; }
+.container:after { clear: both; }
+
+a { color: #444444; }
+a:hover, a:focus { color: #1b8ef0; }
+
+.header-top { background: #e7e7e7; }
+
+.parents-options { *zoom: 1; float: left; clear: none; text-align: inherit; width: 22.75%; margin-left: 0%; margin-right: 3%; font-size: 1rem; }
+.parents-options:before, .parents-options:after { content: ''; display: table; }
+.parents-options:after { clear: both; }
+.parents-options:last-child { margin-right: 0%; }
+.parents-options .currency { *zoom: 1; float: left; clear: none; text-align: inherit; width: 48.5%; margin-left: 0%; margin-right: 3%; font-size: 0.8125em; }
+.parents-options .currency:before, .parents-options .currency:after { content: ''; display: table; }
+.parents-options .currency:after { clear: both; }
+.parents-options .currency:last-child { margin-right: 0%; }
+.parents-options .language { *zoom: 1; float: left; clear: none; text-align: inherit; width: 48.5%; margin-left: 0%; margin-right: 3%; font-size: 0.8125em; }
+.parents-options .language:before, .parents-options .language:after { content: ''; display: table; }
+.parents-options .language:after { clear: both; }
+.parents-options .language:last-child { margin-right: 0%; }
+
+.purchase-menu { *zoom: 1; float: left; clear: none; text-align: inherit; width: 74.25%; margin-left: 0%; margin-right: 3%; font-size: 1rem; }
+.purchase-menu:before, .purchase-menu:after { content: ''; display: table; }
+.purchase-menu:after { clear: both; }
+.purchase-menu:last-child { margin-right: 0%; }
+.purchase-menu ul { float: right; }
+.purchase-menu ul li { font-size: 0.8125em; float: left; display: list-item; list-style: none; }
+.purchase-menu ul li a { display: block; text-decoration: none; margin-right: 0.9375em; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; }
+.purchase-menu ul li a:hover { color: #1b8ef0; }
+
+aside { *zoom: 1; float: left; clear: none; text-align: inherit; width: 31.33333%; margin-left: 0%; margin-right: 3%; background: #1c893b; font-size: 1.25rem; }
+aside:before, aside:after { content: ''; display: table; }
+aside:after { clear: both; }
+aside:last-child { margin-right: 0%; }
+aside p { font-size: 1.25em; }
+@media (min-width: 1920px) { aside { *zoom: 1; float: left; clear: none; text-align: inherit; width: 65.66667%; margin-left: 0%; margin-right: 3%; }
+  aside:before, aside:after { content: ''; display: table; }
+  aside:after { clear: both; }
+  aside:last-child { margin-right: 0%; } }
+
+article { *zoom: 1; float: left; clear: none; text-align: inherit; width: 65.66667%; margin-left: 0%; margin-right: 3%; background: #1920e3; font-size: 2.5rem; }
+article:before, article:after { content: ''; display: table; }
+article:after { clear: both; }
+article:last-child { margin-right: 0%; }
+article h1 { font-size: 1.25em; }
+
+@media (min-width: 1920px) { header { background: #333; } }
+
+@media (min-width: 320px) { header { background: #f80b0b; } }
+
+@media (min-width: 768px) { header { background: #ff00f2; } }

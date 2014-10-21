@@ -1,0 +1,9 @@
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+<ShortName>Padrão Front End</ShortName>
+<Description>Padrão Front End para automação de tarefas.</Description>
+<Tags>padrão front end, front end, gruntjs, automação, css3, responsive</Tags>
+<Image width="16" height="16">http://padrao.dev/favicon.ico</Image>
+<Url xmlns:referrer="http://a9.com/-/opensearch/extensions/referrer/" type="text/html" method="GET" template="?s={searchTerms}"/>
+<InputEncoding>UTF-8</InputEncoding>
+<AdultContent>false</AdultContent>
+</OpenSearchDescription>
