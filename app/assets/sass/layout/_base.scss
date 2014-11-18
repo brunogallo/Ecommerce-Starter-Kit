@@ -4,8 +4,8 @@
 
 // Custom styles
 body {
-	font-family: 'Lato-regular', sans-serif;
-	color: #444444;
+	font-family: "Rokkitt", sans-serif !important;
+	color: $black;
 	text-align: left;
 }
 
@@ -20,12 +20,25 @@ body {
 }
 
 a {
-	color: #444444;
+	color: $gold;
+	text-decoration: none;
 		&:hover,
 		&:focus{
-			color: $light-blue;
+			color: $gold-dark;
 		}
+	@include transition( all 0.3s );
 }
+
+i {
+	@include transition( all 0.3s );
+}
+
+ul {
+	list-style: none;
+}
+			
+			
+			
 // Layout
 @import 'header';
 @import 'footer';

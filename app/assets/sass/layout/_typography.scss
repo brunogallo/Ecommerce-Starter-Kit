@@ -1,5 +1,3 @@
 //Font-face
-
-@include font-face(Lato-regular, '../fonts/Lato/lato-regular-webfont');
-@include font-face(Lato-bold, '../fonts/Lato/lato-bold-webfont', bold);
-@include font-face(Lato-light, '../fonts/Lato/lato-light-webfont');
+@include font-face(Rokkitt, '../fonts/Rokkitt/rokkitt-regular-webfont');
+@include font-face(Rokkitt-bold, '../fonts/Rokkitt/rokkitt-bold-webfont', bold);

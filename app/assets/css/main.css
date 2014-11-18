@@ -187,62 +187,145 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 td, th { padding: 0; }
 
-@font-face { font-family: Lato-regular; font-weight: normal; font-style: normal; src: url("../fonts/Lato/lato-regular-webfont.eot"); src: url("../fonts/Lato/lato-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Lato/lato-regular-webfont.woff") format("woff"), url("../fonts/Lato/lato-regular-webfont.ttf") format("truetype"), url("../fonts/Lato/lato-regular-webfont.svg#Lato-regular") format("svg"); }
-@font-face { font-family: Lato-bold; font-weight: bold; font-style: normal; src: url("../fonts/Lato/lato-bold-webfont.eot"); src: url("../fonts/Lato/lato-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Lato/lato-bold-webfont.woff") format("woff"), url("../fonts/Lato/lato-bold-webfont.ttf") format("truetype"), url("../fonts/Lato/lato-bold-webfont.svg#Lato-bold") format("svg"); }
-@font-face { font-family: Lato-light; font-weight: normal; font-style: normal; src: url("../fonts/Lato/lato-light-webfont.eot"); src: url("../fonts/Lato/lato-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Lato/lato-light-webfont.woff") format("woff"), url("../fonts/Lato/lato-light-webfont.ttf") format("truetype"), url("../fonts/Lato/lato-light-webfont.svg#Lato-light") format("svg"); }
-body { font-family: 'Lato-regular', sans-serif; color: #444444; text-align: left; }
+@font-face { font-family: Rokkitt; font-weight: normal; font-style: normal; src: url("../fonts/Rokkitt/rokkitt-regular-webfont.eot"); src: url("../fonts/Rokkitt/rokkitt-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Rokkitt/rokkitt-regular-webfont.woff") format("woff"), url("../fonts/Rokkitt/rokkitt-regular-webfont.ttf") format("truetype"), url("../fonts/Rokkitt/rokkitt-regular-webfont.svg#Rokkitt") format("svg"); }
+@font-face { font-family: Rokkitt-bold; font-weight: bold; font-style: normal; src: url("../fonts/Rokkitt/rokkitt-bold-webfont.eot"); src: url("../fonts/Rokkitt/rokkitt-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Rokkitt/rokkitt-bold-webfont.woff") format("woff"), url("../fonts/Rokkitt/rokkitt-bold-webfont.ttf") format("truetype"), url("../fonts/Rokkitt/rokkitt-bold-webfont.svg#Rokkitt-bold") format("svg"); }
+body { font-family: "Rokkitt", sans-serif !important; color: #1b2026; text-align: left; }
 
 *, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-.container { *zoom: 1; width: auto; max-width: 1410px; float: none; display: block; margin-right: auto; margin-left: auto; padding-left: 0; padding-right: 0; }
+.container { *zoom: 1; width: auto; max-width: 1170px; float: none; display: block; margin-right: auto; margin-left: auto; padding-left: 0; padding-right: 0; }
 .container:before, .container:after { content: ''; display: table; }
 .container:after { clear: both; }
 
-a { color: #444444; }
-a:hover, a:focus { color: #1b8ef0; }
+a { color: #b4ad82; text-decoration: none; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s; }
+a:hover, a:focus { color: #827b4e; }
 
-.header-top { background: #e7e7e7; }
+i { -webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s; }
 
-.parents-options { *zoom: 1; float: left; clear: none; text-align: inherit; width: 22.75%; margin-left: 0%; margin-right: 3%; font-size: 1rem; }
-.parents-options:before, .parents-options:after { content: ''; display: table; }
-.parents-options:after { clear: both; }
-.parents-options:last-child { margin-right: 0%; }
-.parents-options .currency { *zoom: 1; float: left; clear: none; text-align: inherit; width: 48.5%; margin-left: 0%; margin-right: 3%; font-size: 0.8125em; }
-.parents-options .currency:before, .parents-options .currency:after { content: ''; display: table; }
-.parents-options .currency:after { clear: both; }
-.parents-options .currency:last-child { margin-right: 0%; }
-.parents-options .language { *zoom: 1; float: left; clear: none; text-align: inherit; width: 48.5%; margin-left: 0%; margin-right: 3%; font-size: 0.8125em; }
-.parents-options .language:before, .parents-options .language:after { content: ''; display: table; }
-.parents-options .language:after { clear: both; }
-.parents-options .language:last-child { margin-right: 0%; }
+ul { list-style: none; }
 
-.purchase-menu { *zoom: 1; float: left; clear: none; text-align: inherit; width: 74.25%; margin-left: 0%; margin-right: 3%; font-size: 1rem; }
-.purchase-menu:before, .purchase-menu:after { content: ''; display: table; }
-.purchase-menu:after { clear: both; }
-.purchase-menu:last-child { margin-right: 0%; }
-.purchase-menu ul { float: right; }
-.purchase-menu ul li { font-size: 0.8125em; float: left; display: list-item; list-style: none; }
-.purchase-menu ul li a { display: block; text-decoration: none; margin-right: 0.9375em; -webkit-transition: all 0.2s ease-in-out; -moz-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; }
-.purchase-menu ul li a:hover { color: #1b8ef0; }
+/* http: //live.yithemes.com/bishop/ */
+/* Topbar */
+#topbar { color: #ffffff; font-size: 0.9375rem; font-style: normal; font-weight: 400; text-align: left; text-transform: none; padding-top: 2px; line-height: 27px; outline: 0 none !important; background-color: #1b2026; border-bottom-color: #212121; border-bottom: 1px solid #ebebeb; /* Redes Sociais */ /* Paises */ /* Lingua e Moeda */ }
+#topbar:after { content: ""; display: table; clear: both; }
+#topbar #topbar-contact { float: left; *zoom: 1; float: left; clear: none; text-align: inherit; width: 48.5%; margin-left: 0%; margin-right: 3%; }
+#topbar #topbar-contact:before, #topbar #topbar-contact:after { content: ''; display: table; }
+#topbar #topbar-contact:after { clear: both; }
+#topbar #topbar-contact:last-child { margin-right: 0%; }
+#topbar .contact-list { /* Telefone */ }
+#topbar .contact-list:after { content: ""; display: table; clear: both; }
+#topbar .contact-list li { font-size: 1.25em; float: left; padding-right: 5px; }
+#topbar .contact-list li a { color: #ffffff; margin: 4px; display: inline-block; line-height: normal; }
+#topbar .contact-list li a :hover { color: #b4ad82; }
+#topbar .contact-list .contact-tel { font-size: 0.75em; }
+#topbar #topbar-pais { float: left; *zoom: 1; float: left; clear: none; text-align: inherit; width: 48.5%; margin-left: 0%; margin-right: 3%; }
+#topbar #topbar-pais:before, #topbar #topbar-pais:after { content: ''; display: table; }
+#topbar #topbar-pais:after { clear: both; }
+#topbar #topbar-pais:last-child { margin-right: 0%; }
+#topbar .topbar-lang, #topbar .topbar-currency { float: right; }
+#topbar .topbar-lang:after, #topbar .topbar-currency:after { content: ""; display: table; clear: both; }
+#topbar .topbar-lang li, #topbar .topbar-currency li { font-size: 0.75em; float: right; padding-left: 10px; text-transform: uppercase; }
+#topbar .topbar-lang li a, #topbar .topbar-currency li a { color: #ffffff; }
+#topbar .topbar-lang li a :hover, #topbar .topbar-currency li a :hover { color: #b4ad82; }
 
-aside { *zoom: 1; float: left; clear: none; text-align: inherit; width: 31.33333%; margin-left: 0%; margin-right: 3%; background: #1c893b; font-size: 1.25rem; }
-aside:before, aside:after { content: ''; display: table; }
-aside:after { clear: both; }
-aside:last-child { margin-right: 0%; }
-aside p { font-size: 1.25em; }
-@media (min-width: 1920px) { aside { *zoom: 1; float: left; clear: none; text-align: inherit; width: 65.66667%; margin-left: 0%; margin-right: 3%; }
-  aside:before, aside:after { content: ''; display: table; }
-  aside:after { clear: both; }
-  aside:last-child { margin-right: 0%; } }
+.float-right { float: right; }
 
-article { *zoom: 1; float: left; clear: none; text-align: inherit; width: 65.66667%; margin-left: 0%; margin-right: 3%; background: #1920e3; font-size: 2.5rem; }
-article:before, article:after { content: ''; display: table; }
-article:after { clear: both; }
-article:last-child { margin-right: 0%; }
-article h1 { font-size: 1.25em; }
+.fa { font-size: .8em; line-height: 22px !important; }
 
-@media (min-width: 1920px) { header { background: #333; } }
+dropdown { display: inline-block; margin: 20px 50px; }
 
-@media (min-width: 320px) { header { background: #f80b0b; } }
+dropdown label, dropdown ul li { display: block; width: 200px; background: #ECF0F1; padding: 15px 20px; }
 
-@media (min-width: 768px) { header { background: #ff00f2; } }
+dropdown label:hover, dropdown ul li:hover { background: #336699; color: white; cursor: pointer; }
+
+dropdown label { color: #336699; border-left: 4px solid #336699; border-radius: 0 5px 0 0; position: relative; z-index: 2; }
+
+dropdown input { display: none; }
+
+dropdown input ~ ul { position: relative; visibility: hidden; opacity: 0; top: -20px; z-index: 1; }
+
+dropdown input:checked + label { background: #336699; color: white; }
+
+dropdown input:checked ~ ul { visibility: visible; opacity: 1; top: 0; }
+
+.animate { -webkit-transition: all .3s; -moz-transition: all .3s; -ms-transition: all .3s; -ms-transition: all .3s; transition: all .3s; backface-visibility: hidden; -webkit-backface-visibility: hidden; /* Chrome and Safari */ -moz-backface-visibility: hidden; /* Firefox */ -ms-backface-visibility: hidden; /* Internet Explorer */ }
+
+/*
+
+
+
+.parents-options{
+	@include col(1/4);
+	font-size: rem(16);
+	
+	.currency{
+		@include col(1/2);
+		font-size: em(13);
+	}
+	
+	.language{
+		@include col(1/2);
+		font-size: em(13);
+	}
+}
+
+.purchase-menu{
+	@include col(3/4);
+	font-size: rem(16);
+	
+	ul{
+		float: right;
+		li{
+			font-size: em(13);
+			float:left;
+			display:list-item;
+			list-style: none;
+			
+			& a{
+				display:block;
+				text-decoration:none;	
+				margin-right: em(15);
+				@include transition (all 0.2s ease-in-out);
+				
+				&:hover{
+					color: $light-blue;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+aside { @include col(1/3); background: #1c893b; font-size: rem(20);  	p {
+	 font-size: em(20);	 	}  @include breakpoint($desktop) { @include col(2/3); }
+}
+
+article { @include col(2/3); background: #1920e3; font-size: rem(40);  	h1 {
+	 font-size: em(20);	 	} 
+}
+
+
+
+header { @include breakpoint($desktop) { background: #333; }
+}
+
+header { @include breakpoint($mobile-small) { background: #f80b0b; }
+}
+
+header { @include breakpoint($tablet) { background: #ff00f2; }
+}
+*/

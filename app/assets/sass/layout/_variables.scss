@@ -6,9 +6,19 @@ $mobile: 480px;
 $mobile-small: 320px;
 
 // Colors
-$light-gray: #f4f4f4; 
-$gray-medium: darken(#f4f4f4, 5);
-$dark-gray: darken(#f4f4f4, 10);
-$light-blue: #1b8ef0;
+$gold: #b4ad82;
+$gold-light: darken(#b4ad82, 10);
+$gold-dark: darken(#b4ad82, 20);
 
+$blue: #2b333a;
+$blue-light: darken(#2b333a, 10);
+$blue-dark: darken(#2b333a, 20);
+
+$black: #1b2026;
+$black-light: darken(#1b2026, 10);
+$black-dark: darken(#1b2026, 20);
+
+$white: #ffffff;
+$white-light: darken(#ffffff, 10);
+$white-dark: darken(#ffffff, 20);
 // Padding
