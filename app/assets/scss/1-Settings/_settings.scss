@@ -1,0 +1,129 @@
+// ====================================================================
+// Settings
+// ====================================================================
+
+// -------------------------------------
+// Fonts
+// -------------------------------------
+
+$font-url : "http://fonts.googleapis.com/css?family=Rokkitt:400,700";
+
+$font-family--sans-serif : "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+$font-family--serif      : Georgia, Cambria, "Times New Roman", Times, serif;
+$font-family--monospace  : Consolas, "Liberation Mono", Courier, monospace;
+
+$font-family--primary    : "Rokkitt", $font-family--sans-serif;
+$font-family--secondary  : $font-family--sans-serif;
+
+// -------------------------------------
+// Font Weights
+// -------------------------------------
+
+$font-weight--thin   : 100;
+$font-weight--light  : 300;
+$font-weight--medium : 400;
+$font-weight--bold   : 700;
+$font-weight--bolder : 900;
+
+// -------------------------------------
+// Base
+// -------------------------------------
+
+$em-base : 16px;
+
+$base-font-size   : 100%;
+$base-line-height : 150%;
+
+$small-font-size  : 60%;
+
+$letter-space     : 1px;
+
+// -------------------------------------
+// Body
+// -------------------------------------
+
+$body-bg : $white;
+
+$body-font-color  : $base-color;
+$body-font-family : $font-family--sans-serif;
+$body-font-weight : $font-weight--medium;
+$body-font-style  : normal;
+
+// -------------------------------------
+// Headers
+// -------------------------------------
+
+$header-font-family    : $font-family--primary;
+$header-font-weight    : $font-weight--medium;
+$header-font-style     : normal;
+$header-font-color     : $base-color;
+$header-line-height    : 1.4;
+$header-top-margin     : .2em;
+$header-bottom-margin  : .5em;
+$header-text-rendering : optimizeLegibility;
+
+$h1-font-size: em(44px);
+$h2-font-size: em(37px);
+$h3-font-size: em(27px);
+$h4-font-size: em(23px);
+$h5-font-size: em(18px);
+$h6-font-size: 1em;
+
+// -------------------------------------
+// Paragraph
+// -------------------------------------
+
+$p-font-family       : inherit;
+$p-font-weight       : $font-weight--medium;
+$p-font-size         : 1em;
+$p-line-height       : 1.6;
+$p-margin-bottom     : em(20px);
+$p-aside-font-size   : em(14px);
+$p-aside-line-height : 1.35;
+$p-aside-font-style  : italic;
+$p-text-rendering    : optimizeLegibility;
+
+// -------------------------------------
+// Hr
+// -------------------------------------
+
+$hr-border-width: 1px;
+$hr-border-style: solid;
+$hr-border-color: $silver;
+$hr-margin: em(20px);
+
+// -------------------------------------
+// Grid config
+// -------------------------------------
+
+$jeet-gutter:           3      !default;
+$jeet-parent-first:     false  !default;
+$jeet-layout-direction: "LTR"  !default;
+$jeet-max-width:        1170px !default;
+
+// -------------------------------------
+// Breakpoints
+// -------------------------------------
+
+$breakpoint--large		: 480px;
+$breakpoint--medium		: 768px;
+$breakpoint--small		: 1170px;
+
+// -------------------------------------
+// Border radius
+// -------------------------------------
+
+$br--default    : .4em;
+$br--round      : 50%;
+
+// -------------------------------------
+// Transitions
+// -------------------------------------
+
+$trns-duration  : .3s;
+
+// -------------------------------------
+// Path to Assets
+// -------------------------------------
+
+$path--rel      : "../img";

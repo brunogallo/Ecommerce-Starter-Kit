@@ -16,7 +16,7 @@ module.exports = function( grunt ) {
 		config: {
 			// Caminhos padrões
 			paths: {
-	            sass:   	'app/assets/sass',
+	            sass:   	'app/assets/scss',
 	            js:     	'app/assets/js',
 		        ftp: 		'www',
 	            env: {
@@ -288,7 +288,6 @@ module.exports = function( grunt ) {
 							{ src: 'http://www.globo.com', dest: 'remote-screenshot.png', delay: 800 }
 						]
 					},
-					
 					local: {
 						path: '<%= config.paths.env.dev %>',
 						port: 7788,

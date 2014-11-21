@@ -1,0 +1,64 @@
+// ====================================================================
+// Extends
+// ====================================================================
+
+// -------------------------------------
+// Clearfix
+//	 
+//	 Usage:
+//	 .article-heading {
+//	   @extend clearfix();
+//	 }
+//	 	 
+// -------------------------------------
+
+%clearfix {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+
+// -------------------------------------
+// Truncate text
+//	 
+//	 Usage:
+//	 .text-truncate-1 {
+//	   @extend text-truncate;
+//	 }
+//	 
+//	 .text-truncate-2 {
+//	   @extend text-truncate;
+//	 }
+//	 	 
+// -------------------------------------
+
+%text-truncate {
+ overflow: hidden;
+ text-overflow: ellipsis;
+ white-space: nowrap;
+}
+
+
+// -------------------------------------
+// Center-align
+//	 
+//	 Usage:
+//	 .footer-wrap {
+//	   width: 450px;
+//	   @extend %center-block;
+//	 }
+//	 	 
+// -------------------------------------
+
+%center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+}

@@ -1,6 +1,7 @@
-/*  Syntax Quick Reference -------------------------- column($ratios: 1, $offset: 0, $cycle: 0, $uncycle: 0, $gutter: $jeet-gutter) span($ratio: 1, $offset: 0) shift($ratios: 0, $col_or_span: column, $gutter: $jeet-gutter) unshift() edit() center($max_width: 1410px, $pad: 0) stack($pad: 0, $align: false) unstack() align($direction: both) cf()
-*/
-/** Grid settings. All values are defaults and can therefore be easily overidden. */
+@charset "UTF-8";
+/*-----------------------------------------------------------------------------/ Project: Padrão Front End ===========================================   TABLE OF CONTENTS  #SETTINGS................Global variables, config switches. #TOOLS...................Default mixins and functions. #GENERIC.................Ground-zero styles (resets, box-sizing). #BASE....................Unclassed HTML elements (type selectors). #OBJECTS.................Cosmetic-free design patterns. #COMPONENTS..............Designed components, chunks of UI. #TRUMPS..................Helpers and overrides.    ATTENTION: The following parts are imported in the right order DO NOT CHANGE THE ORDER OF THE IMPORTS IN THIS FILE!!!!!  HINT: Each of these parts live in their own directory. Further explanation is provided in the dedicated folders. 
+/-----------------------------------------------------------------------------*/
+@import url("http://fonts.googleapis.com/css?family=Rokkitt:400,700");
 /** List functions courtesy of the wonderful folks at Team Sass. Check out their awesome grid: Singularity. */
 /** Get  percentage from a given ratio. @param {number} [$ratio=1] - The column ratio of the element. @returns {number} - The percentage value. */
 /** Work out the column widths based on the ratio and gutter sizes. @param {number} [$ratios=1] - The column ratio of the element. @param {number} [$gutter=$jeet-gutter] - The gutter for the column. @returns {list} $width $gutter - A list containing the with and gutter for the element. */
@@ -25,208 +26,166 @@
 /** Unstack an element. */
 /** Center an element on either or both axes. @requires A parent container with relative positioning. @param {string} [$direction=both] - Specify which axes to center the element on. */
 /** Apply a clearfix to an element. */
-/* normalize-scss 3.0.1+normalize.3.0.1 | MIT/GPLv2 License | bit.ly/normalize-scss */
-/* Base ========================================================================== */
-/** Establish a vertical rhythm unit using $base-font-size, $base-line-height, and $rhythm-unit variables. Also, correct text resizing oddly in IE 6/7 when body `font-size` is set using `em` units. */
-html { font-size: 100%; line-height: 1.5em; }
+.container:before, #topbar:before, #topbar .contact-list:before, #topbar .topbar-lang:before, #topbar .topbar-currency:before, .container:after, #topbar:after, #topbar .contact-list:after, #topbar .topbar-lang:after, #topbar .topbar-currency:after { content: " "; display: table; }
+.container:after, #topbar:after, #topbar .contact-list:after, #topbar .topbar-lang:after, #topbar .topbar-currency:after { clear: both; }
 
-/** 1. Set default font family to sans-serif. 2. Prevent iOS text size adjust after orientation change, without disabling user zoom. */
-html { font-family: sans-serif; /* 1 */ -ms-text-size-adjust: 100%; /* 2 */ -webkit-text-size-adjust: 100%; /* 2 */ }
+.container { display: block; margin-left: auto; margin-right: auto; float: none; }
 
-/** Remove default margin. */
-body { margin: 0; }
+/*--------------------------------------------------*\ #Generic styles
+\*--------------------------------------------------*/
+* { outline: none; }
 
-/* HTML5 display definitions ========================================================================== */
-/** Correct `block` display not defined for any HTML5 element in IE 8/9. Correct `block` display not defined for `details` or `summary` in IE 10/11 and Firefox. Correct `block` display not defined for `main` in IE 11. */
-article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block; }
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary { display: block; }
 
-/** 1. Correct `inline-block` display not defined in IE 8/9. 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera. */
-audio, canvas, progress, video { display: inline-block; /* 1 */ *display: inline; *zoom: 1; vertical-align: baseline; /* 2 */ }
+audio, canvas, video { display: inline-block; }
 
-/** Prevent modern browsers from displaying `audio` without controls. Remove excess height in iOS 5 devices. */
 audio:not([controls]) { display: none; height: 0; }
 
-/** Address `[hidden]` styling not present in IE 8/9/10. */
-[hidden] { display: none; }
+[hidden], template { display: none; }
 
-/** Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22. */
-template { display: none; }
+html { background: #fff; color: #000; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
-/* Links ========================================================================== */
-/** Remove the gray background color from active links in IE 10. */
+html, button, input, select, textarea { font-family: sans-serif; }
+
+body { margin: 0; }
+
 a { background: transparent; }
+a:focus { outline: thin dotted; }
+a:hover, a:active { outline: 0; }
 
-/** Improve readability when focused and also mouse hovered in all browsers. */
-a:active, a:hover { outline: 0; }
+h1 { font-size: em(44px); margin: 0.67em 0; }
 
-/* Text-level semantics ========================================================================== */
-/** Address styling not present in IE 8/9/10/11, Safari, and Chrome. */
+h2 { font-size: em(37px); margin: 0.83em 0; }
+
+h3 { font-size: em(27px); margin: 1em 0; }
+
+h4 { font-size: em(23px); margin: 1.33em 0; }
+
+h5 { font-size: em(18px); margin: 1.67em 0; }
+
+h6 { font-size: 1em; margin: 2.33em 0; }
+
 abbr[title] { border-bottom: 1px dotted; }
 
-/** Address style set to `bolder` in Firefox 4+, Safari, and Chrome. */
 b, strong { font-weight: bold; }
 
-/** Set 1 unit of vertical rhythm on the top and bottom margin. */
-blockquote { margin: 1.5rem 0; }
-
-/** Address styling not present in Safari and Chrome. */
 dfn { font-style: italic; }
 
-/** Address variable `h1` font-size and margin within `section` and `article` contexts in Firefox 4+, Safari, and Chrome. */
-h1 { /* Set the font-size and line-height while keeping a proper vertical rhythm. */ font-size: 32px; font-size: 2rem; line-height: 48px; line-height: 3rem; /* Set 1 unit of vertical rhythm on the top and bottom margins. */ margin-top: 24px; margin-top: 1.5rem; margin-bottom: 24px; margin-bottom: 1.5rem; }
-
-h2 { font-size: 24px; font-size: 1.5rem; line-height: 48px; line-height: 3rem; margin-top: 24px; margin-top: 1.5rem; margin-bottom: 24px; margin-bottom: 1.5rem; }
-
-h3 { font-size: 19px; font-size: 1.17rem; line-height: 24px; line-height: 1.5rem; margin-top: 24px; margin-top: 1.5rem; margin-bottom: 24px; margin-bottom: 1.5rem; }
-
-h4 { font-size: 16px; font-size: 1rem; line-height: 24px; line-height: 1.5rem; margin-top: 24px; margin-top: 1.5rem; margin-bottom: 24px; margin-bottom: 1.5rem; }
-
-h5 { font-size: 13px; font-size: 0.83rem; line-height: 24px; line-height: 1.5rem; margin-top: 24px; margin-top: 1.5rem; margin-bottom: 24px; margin-bottom: 1.5rem; }
-
-h6 { font-size: 11px; font-size: 0.67rem; line-height: 24px; line-height: 1.5rem; margin-top: 24px; margin-top: 1.5rem; margin-bottom: 24px; margin-bottom: 1.5rem; }
-
-/** Address styling not present in IE 8/9. */
 mark { background: #ff0; color: #000; }
 
-/** Set 1 unit of vertical rhythm on the top and bottom margin. */
-p, pre { margin: 1.5rem 0; }
+code, kbd, pre, samp { font-family: monospace, serif; font-size: 1em; }
 
-/** Address inconsistent and variable font size in all browsers. */
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+
+q { quotes: "\201C" "\201D" "\2018" "\2019"; }
+
+q:before, q:after { content: ''; content: none; }
+
 small { font-size: 80%; }
 
-/** Prevent `sub` and `sup` affecting `line-height` in all browsers. */
 sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
 
 sup { top: -0.5em; }
 
 sub { bottom: -0.25em; }
 
-/* Lists ========================================================================== */
-/** Address margins set differently in IE 6/7. */
-dl, menu, ol, ul { margin: 0; }
+img { border: 0; }
 
-dd { margin: 0 0 0 0; }
-
-/** Address paddings set differently in IE 6/7. */
-menu, ol, ul { padding: 0 0 0 0; }
-
-/** Correct list images handled incorrectly in IE 7. */
-nav ul, nav ol { list-style: none; list-style-image: none; }
-
-/* Embedded content ========================================================================== */
-/** Remove border when inside `a` element in IE 8/9/10. */
-img { border: 0; /* Improve image quality when scaled in IE 7. */ -ms-interpolation-mode: bicubic; }
-
-/** Correct overflow not hidden in IE 9/10/11. */
 svg:not(:root) { overflow: hidden; }
 
-/* Grouping content ========================================================================== */
-/** Address margin not present in IE 8/9 and Safari. */
-figure { margin: 1.5rem 0; }
+figure { margin: 0; }
 
-/** Address differences between Firefox and other browsers. */
-hr { -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; height: 0; }
+fieldset { border: 1px solid #c0c0c0; margin: 0 2px; padding: 0.35em 0.625em 0.75em; }
 
-/** Contain overflow in all browsers. */
-pre { overflow: auto; }
+legend { border: 0; padding: 0; white-space: normal; }
 
-/** Address odd `em`-unit font size rendering in all browsers. */
-code, kbd, pre, samp { font-family: monospace, monospace; font-size: 1em; }
+button, input, select, textarea { font-family: inherit; font-size: 100%; margin: 0; vertical-align: baseline; }
 
-/* Forms ========================================================================== */
-/** Known limitation: by default, Chrome and Safari on OS X allow very limited styling of `select`, unless a `border` property is set. */
-/** Correct margin displayed oddly in IE 6/7. */
-form { margin: 0; }
+button, input { line-height: normal; }
 
-/** 1. Correct color not being inherited. Known issue: affects color of disabled elements. 2. Correct font properties not being inherited. 3. Address margins set differently in Firefox 4+, Safari, and Chrome. 4. Address `font-family` inconsistency between `textarea` and other form in IE 7 5. Improve appearance and consistency with IE 6/7. */
-button, input, optgroup, select, textarea { color: inherit; /* 1 */ font: inherit; /* 2 */ margin: 0; /* 3 */ *font-family: sans-serif; /* 4 */ *vertical-align: middle; /* 5 */ }
-
-/** Address `overflow` set to `hidden` in IE 8/9/10/11. */
-button { overflow: visible; }
-
-/** Address inconsistent `text-transform` inheritance for `button` and `select`. All other form control elements do not inherit `text-transform` values. Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera. Correct `select` style inheritance in Firefox. */
 button, select { text-transform: none; }
 
-/** 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio` and `video` controls. 2. Correct inability to style clickable `input` types in iOS. 3. Improve usability and consistency of cursor style between image-type `input` and others. 4. Remove inner spacing in IE 7 without affecting normal text inputs. Known issue: inner spacing remains in IE 6. */
-button, html input[type="button"], input[type="reset"], input[type="submit"] { -webkit-appearance: button; /* 2 */ cursor: pointer; /* 3 */ *overflow: visible; /* 4 */ }
+button, html input[type="button"], input[type="reset"], input[type="submit"] { -webkit-appearance: button; cursor: pointer; }
 
-/** Re-set default cursor for disabled elements. */
-button[disabled], html input[disabled] { cursor: default; }
+button[disabled], input[disabled] { cursor: default; }
 
-/** Remove inner padding and border in Firefox 4+. */
 button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
 
-/** Address Firefox 4+ setting `line-height` on `input` using `!important` in the UA stylesheet. */
-input { line-height: normal; }
+textarea { overflow: auto; vertical-align: top; }
 
-/** It's recommended that you don't attempt to style these elements. Firefox's implementation doesn't respect box-sizing, padding, or width.  1. Address box sizing set to `content-box` in IE 8/9/10. 2. Remove excess padding in IE 8/9/10. 3. Remove excess padding in IE 7. Known issue: excess padding remains in IE 6. */
-input[type="checkbox"], input[type="radio"] { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; /* 1 */ padding: 0; /* 2 */ *height: 13px; /* 3 */ *width: 13px; /* 3 */ }
-
-/** Fix the cursor style for Chrome's increment/decrement buttons. For certain `font-size` values of the `input`, it causes the cursor style of the decrement button to change from `default` to `text`. */
-input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button { height: auto; }
-
-/** 1. Address `appearance` set to `searchfield` in Safari and Chrome. 2. Address `box-sizing` set to `border-box` in Safari and Chrome (include `-moz` to future-proof). */
-input[type="search"] { -webkit-appearance: textfield; /* 1 */ -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; /* 2 */ /** Remove inner padding and search cancel button in Safari and Chrome on OS X. Safari (but not Chrome) clips the cancel button when the search input has padding (and `textfield` appearance). */ }
-input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
-
-/** Define consistent border, margin, and padding. */
-fieldset { margin: 0 2px; /* Apply borders and padding that keep the vertical rhythm. */ border-color: #c0c0c0; border-top-width: 1px; border-top-width: 0.0625rem; border-top-style: solid; padding-top: 7px; padding-top: 0.4625rem; border-bottom-width: 1px; border-bottom-width: 0.0625rem; border-bottom-style: solid; padding-bottom: 15px; padding-bottom: 0.9125rem; border-left-width: 1px; border-left-width: 0.0625rem; border-left-style: solid; padding-left: 14px; padding-left: 0.875rem; border-right-width: 1px; border-right-width: 0.0625rem; border-right-style: solid; padding-right: 14px; padding-right: 0.875rem; }
-
-/** 1. Correct `color` not being inherited in IE 8/9/10/11. 2. Remove padding so people aren't caught out if they zero out fieldsets. 3. Correct alignment displayed oddly in IE 6/7. */
-legend { border: 0; /* 1 */ padding: 0; /* 2 */ *margin-left: -7px; /* 3 */ }
-
-/** Remove default vertical scrollbar in IE 8/9/10/11. */
-textarea { overflow: auto; }
-
-/** Don't inherit the `font-weight` (applied by a rule above). NOTE: the default cannot safely be changed in Chrome and Safari on OS X. */
-optgroup { font-weight: bold; }
-
-/* Tables ========================================================================== */
-/** Remove most spacing between table cells. */
 table { border-collapse: collapse; border-spacing: 0; }
 
-td, th { padding: 0; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; }
 
-@font-face { font-family: Rokkitt; font-weight: normal; font-style: normal; src: url("../fonts/Rokkitt/rokkitt-regular-webfont.eot"); src: url("../fonts/Rokkitt/rokkitt-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Rokkitt/rokkitt-regular-webfont.woff") format("woff"), url("../fonts/Rokkitt/rokkitt-regular-webfont.ttf") format("truetype"), url("../fonts/Rokkitt/rokkitt-regular-webfont.svg#Rokkitt") format("svg"); }
-@font-face { font-family: Rokkitt-bold; font-weight: bold; font-style: normal; src: url("../fonts/Rokkitt/rokkitt-bold-webfont.eot"); src: url("../fonts/Rokkitt/rokkitt-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/Rokkitt/rokkitt-bold-webfont.woff") format("woff"), url("../fonts/Rokkitt/rokkitt-bold-webfont.ttf") format("truetype"), url("../fonts/Rokkitt/rokkitt-bold-webfont.svg#Rokkitt-bold") format("svg"); }
-body { font-family: "Rokkitt", sans-serif !important; color: #1b2026; text-align: left; }
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
-*, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+a { color: gray; -webkit-transition: color 0.3s ease; -moz-transition: color 0.3s ease; -ms-transition: color 0.3s ease; -o-transition: color 0.3s ease; transition: color 0.3s ease; }
+a:hover { color: black; }
 
-.container { *zoom: 1; width: auto; max-width: 1170px; float: none; display: block; margin-right: auto; margin-left: auto; padding-left: 0; padding-right: 0; }
-.container:before, .container:after { content: ''; display: table; }
-.container:after { clear: both; }
+ul { list-style: none; margin: 0px; padding: 0px; }
 
-a { color: #b4ad82; text-decoration: none; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s; }
-a:hover, a:focus { color: #827b4e; }
+body { background-color: #ffffff; color: #1b2026; font-family: "Rokkitt", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; font-weight: 400; font-style: normal; }
 
-i { -webkit-transition: all 0.3s; -moz-transition: all 0.3s; transition: all 0.3s; }
+h1, h2, h3, h4, h5, h6 { font-family: "Rokkitt", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; font-weight: 400; font-style: normal; color: #1b2026; text-rendering: optimizeLegibility; margin-top: 0.2em; margin-bottom: 0.5em; line-height: 1.4; }
 
-ul { list-style: none; }
+h1 { font-size: em(44px); }
 
+h2 { font-size: em(37px); }
+
+h3 { font-size: em(27px); }
+
+h4 { font-size: em(23px); }
+
+h5 { font-size: em(18px); }
+
+h6 { font-size: 1em; }
+
+hr { border: solid #bababa; border-width: 1px 0 0; clear: both; margin: em(20px) 0 em(20px)-rem-calc(1px); height: 0; }
+
+p { font-family: inherit; font-weight: 400; font-size: 1em; line-height: 1.6; margin-bottom: em(20px); text-rendering: optimizeLegibility; }
+
+em, i { font-style: italic; line-height: inherit; }
+
+strong, b { font-weight: 700; line-height: inherit; }
+
+small { font-size: 60%; line-height: inherit; }
+
+a { text-decoration: none; }
+a:hover, a:not[class^="btn--"] { text-decoration: underline; }
+
+/*--------------------------------------------------*\ #Objects
+\*--------------------------------------------------*/
+/*--------------------------------------------------*\ #Components
+\*--------------------------------------------------*/
 /* http: //live.yithemes.com/bishop/ */
+.container { width: 100%; max-width: 1170px; }
+
+.header__top { background-color: #1b2026; outline: 0 none !important; border-bottom-color: #212121; border-bottom: 1px solid #ebebeb; }
+
 /* Topbar */
-#topbar { color: #ffffff; font-size: 0.9375rem; font-style: normal; font-weight: 400; text-align: left; text-transform: none; padding-top: 2px; line-height: 27px; outline: 0 none !important; background-color: #1b2026; border-bottom-color: #212121; border-bottom: 1px solid #ebebeb; /* Redes Sociais */ /* Paises */ /* Lingua e Moeda */ }
-#topbar:after { content: ""; display: table; clear: both; }
-#topbar #topbar-contact { float: left; *zoom: 1; float: left; clear: none; text-align: inherit; width: 48.5%; margin-left: 0%; margin-right: 3%; }
-#topbar #topbar-contact:before, #topbar #topbar-contact:after { content: ''; display: table; }
-#topbar #topbar-contact:after { clear: both; }
-#topbar #topbar-contact:last-child { margin-right: 0%; }
+#topbar { color: #ffffff; font-size: 0.9375rem; font-style: normal; font-weight: 400; text-align: left; text-transform: none; padding-top: 2px; line-height: 27px; /* Redes Sociais */ /* Lingua e Moeda */ }
 #topbar .contact-list { /* Telefone */ }
-#topbar .contact-list:after { content: ""; display: table; clear: both; }
 #topbar .contact-list li { font-size: 1.25em; float: left; padding-right: 5px; }
 #topbar .contact-list li a { color: #ffffff; margin: 4px; display: inline-block; line-height: normal; }
 #topbar .contact-list li a :hover { color: #b4ad82; }
 #topbar .contact-list .contact-tel { font-size: 0.75em; }
-#topbar #topbar-pais { float: left; *zoom: 1; float: left; clear: none; text-align: inherit; width: 48.5%; margin-left: 0%; margin-right: 3%; }
-#topbar #topbar-pais:before, #topbar #topbar-pais:after { content: ''; display: table; }
-#topbar #topbar-pais:after { clear: both; }
-#topbar #topbar-pais:last-child { margin-right: 0%; }
 #topbar .topbar-lang, #topbar .topbar-currency { float: right; }
-#topbar .topbar-lang:after, #topbar .topbar-currency:after { content: ""; display: table; clear: both; }
 #topbar .topbar-lang li, #topbar .topbar-currency li { font-size: 0.75em; float: right; padding-left: 10px; text-transform: uppercase; }
 #topbar .topbar-lang li a, #topbar .topbar-currency li a { color: #ffffff; }
 #topbar .topbar-lang li a :hover, #topbar .topbar-currency li a :hover { color: #b4ad82; }
+
+#topbar__contact { *zoom: 1; float: left; clear: none; text-align: inherit; width: 48.5%; margin-left: 0%; margin-right: 3%; }
+#topbar__contact:before, #topbar__contact:after { content: ''; display: table; }
+#topbar__contact:after { clear: both; }
+#topbar__contact:last-child { margin-right: 0%; }
+
+/* Paises */
+#topbar__pais { *zoom: 1; float: left; clear: none; text-align: inherit; width: 48.5%; margin-left: 0%; margin-right: 3%; }
+#topbar__pais:before, #topbar__pais:after { content: ''; display: table; }
+#topbar__pais:after { clear: both; }
+#topbar__pais:last-child { margin-right: 0%; }
 
 .float-right { float: right; }
 

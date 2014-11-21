@@ -1,0 +1,69 @@
+/*-----------------------------------------------------------------------------/
+ *  Project: Padrão Front End
+ *  ===========================================
+ *
+ *
+ *  TABLE OF CONTENTS
+ *
+ *  #SETTINGS................Global variables, config switches.
+ *  #TOOLS...................Default mixins and functions.
+ *  #GENERIC.................Ground-zero styles (resets, box-sizing).
+ *  #BASE....................Unclassed HTML elements (type selectors).
+ *  #OBJECTS.................Cosmetic-free design patterns.
+ *  #COMPONENTS..............Designed components, chunks of UI.
+ *  #TRUMPS..................Helpers and overrides.
+ *
+ *
+ *
+ *  ATTENTION:
+ *  The following parts are imported in the right order
+ *  DO NOT CHANGE THE ORDER OF THE IMPORTS IN THIS FILE!!!!!
+ *
+ *  HINT:
+ *  Each of these parts live in their own directory. Further explanation is
+ *  provided in the dedicated folders.
+ *
+/-----------------------------------------------------------------------------*/
+
+
+// #SETTINGS
+// ===========================================
+@import "1-Settings/_theme-colors.scss";
+@import "1-Settings/_settings.scss";
+
+
+// #TOOLS
+// ===========================================
+@import "2-Tools/_tools.scss";
+
+
+// #GENERIC
+// ===========================================
+@import "3-Generic/_generic.scss";
+
+
+// #BASE
+// ===========================================
+@import "4-Base/_base.scss";
+
+
+// #OBJECTS
+// ===========================================
+@import "5-Objects/_objects.scss";
+
+
+// #COMPONENTS
+// ===========================================
+@import "6-Components/_components.scss";
+
+
+// #TRUMPS
+// ===========================================
+@import "7-Trumps/_trumps.scss";
+
+
+// #TRUMPS
+// ===========================================
+@import "8-Layouts/header";
+@import "8-Layouts/home";
+@import "8-Layouts/footer";

@@ -1,0 +1,60 @@
+// ====================================================================
+// Functions
+// ====================================================================
+
+
+// -------------------------------------
+// Import if Fonts URL is defined
+// -------------------------------------
+
+@if variable-exists(font-url) {
+  @import url($font-url);
+}
+
+
+// -------------------------------------
+// Calculate REM values
+// -------------------------------------
+
+@function rem($pxval) {
+  @if not unitless($pxval) {
+      $pxval: strip-units($pxval);
+  }
+
+  $base: $em-base;
+  @if not unitless($base) {
+      $base: strip-units($base);
+  }
+  @return ($pxval / $base) * 1rem;
+}
+
+
+// -------------------------------------
+// Calculate EM values
+// -------------------------------------
+
+@function em($pxval, $base: $em-base) {
+  @if not unitless($pxval) {
+      $pxval: strip-units($pxval);
+  }
+  @if not unitless($base) {
+      $base: strip-units($base);
+  }
+  @return ($pxval / $base) * 1em;
+}
+
+
+// -------------------------------------
+// Strip units
+// -------------------------------------
+
+@function strip-units($val) {
+  @return ($val / ($val * 0 + 1));
+}
+
+
+// -------------------------------------
+// Jeet Grid
+// -------------------------------------
+
+@import "vendors/jeet/functions";

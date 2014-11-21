@@ -1,0 +1,88 @@
+// ====================================================================
+// Global
+// ====================================================================
+
+// -------------------------------------
+// Body
+// -------------------------------------
+
+body {
+  background-color : $body-bg;
+  color            : $body-font-color;
+  font-family      : $font-family--primary;
+  font-weight      : $body-font-weight;
+  font-style       : $body-font-style;
+}
+
+// -------------------------------------
+// Headers
+// -------------------------------------
+
+h1, h2, h3, h4, h5, h6 {
+  font-family    : $header-font-family;
+  font-weight    : $header-font-weight;
+  font-style     : $header-font-style;
+  color          : $header-font-color;
+  text-rendering : $header-text-rendering;
+  margin-top     : $header-top-margin;
+  margin-bottom  : $header-bottom-margin;
+  line-height    : $header-line-height;
+}
+
+h1 { font-size : $h1-font-size; }
+h2 { font-size : $h2-font-size; }
+h3 { font-size : $h3-font-size; }
+h4 { font-size : $h4-font-size; }
+h5 { font-size : $h5-font-size; }
+h6 { font-size : $h6-font-size; }
+
+// -------------------------------------
+// Hr
+// -------------------------------------
+
+hr {
+  border: $hr-border-style $hr-border-color;
+  border-width: $hr-border-width 0 0;
+  clear: both;
+  margin: $hr-margin 0 ($hr-margin - rem-calc($hr-border-width));
+  height: 0;
+}
+
+// -------------------------------------
+// Paragraph
+// -------------------------------------
+
+p {
+  font-family    : $p-font-family;
+  font-weight    : $p-font-weight;
+  font-size      : $p-font-size;
+  line-height    : $p-line-height;
+  margin-bottom  : $p-margin-bottom;
+  text-rendering : $p-text-rendering;
+}
+
+em, i {
+  font-style  : italic;
+  line-height : inherit;
+}
+
+strong, b {
+  font-weight : $font-weight--bold;
+  line-height : inherit;
+}
+
+small {
+  font-size   : $small-font-size;
+  line-height : inherit;
+}
+
+// -------------------------------------
+// Links
+// -------------------------------------
+
+a{
+  text-decoration: none;
+  &:hover, &:not[class^="btn--"]{
+    text-decoration: underline;
+  }
+}

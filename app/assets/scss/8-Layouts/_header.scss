@@ -1,0 +1,321 @@
+// ====================================================================
+// Header
+// ====================================================================
+
+/* http: //live.yithemes.com/bishop/ */
+
+.container{
+	width: 100%;
+	max-width: 1170px;
+	@extend %center-block;
+	@extend %clearfix;
+}
+
+.header__top{
+	background-color: $black;
+	outline: 0 none !important;
+	border-bottom-color: #212121;
+	border-bottom: 1px solid #ebebeb;
+}
+
+/* Topbar */
+#topbar{
+	color: $white;
+	font-size: rem(15);
+	font-style: normal;
+	font-weight: 400;
+	text-align: left;
+	text-transform: none;
+	padding-top: 2px;
+	line-height: 27px;
+	@extend %clearfix;
+	
+	/* Redes Sociais */
+	.contact-list{
+		@extend %clearfix;
+		
+		& li {
+			font-size: em(20);
+			float: left;
+			padding-right: 5px;
+				
+			& a {
+				color: $white;
+				margin: 4px;
+				display: inline-block;
+				line-height: normal;
+			
+				& :hover {
+					color: $gold;
+				}
+			}
+		}
+		
+		/* Telefone */
+		.contact-tel{
+			font-size: em(12);
+		}
+	}
+	
+	/* Lingua e Moeda */
+	.topbar-lang,
+	.topbar-currency{
+		@extend %clearfix;
+		float: right;
+		
+		& li {
+			font-size: em(12);
+			float: right;
+			padding-left: 10px;
+			text-transform: uppercase;
+			
+			& a{
+				color: $white;
+			
+				& :hover {
+					color: $gold;
+				}
+			}
+		}
+	}
+}
+
+#topbar__contact{
+	@include col(1/2);
+}
+
+/* Paises */
+#topbar__pais{
+	@include col(1/2);		
+}
+
+
+
+ 
+
+
+
+.float-right{
+  float: right;
+}
+.fa{
+ font-size: .8em;
+  line-height: 22px !important;
+}
+dropdown{
+   display: inline-block;
+   margin: 20px 50px; 
+}
+dropdown label, dropdown ul li{
+  display: block;
+  width: 200px;
+  background: #ECF0F1;
+  padding: 15px 20px;
+}
+dropdown label:hover, dropdown ul li:hover{
+  background: #336699;
+  color: white;
+  cursor: pointer;
+}
+dropdown label{
+  color: #336699;
+  border-left: 4px solid #336699;
+  border-radius: 0 5px 0 0; 
+  position: relative;
+  z-index: 2;
+}
+dropdown input{
+  display: none;
+}
+dropdown input ~ ul{
+  position: relative;
+  visibility: hidden;
+  opacity: 0;
+  top: -20px;
+  z-index: 1;
+}
+dropdown input:checked + label{
+  background: #336699;
+  color: white;
+}
+
+dropdown input:checked ~ ul{
+  visibility: visible;
+  opacity: 1;
+  top: 0;
+}
+
+.animate{
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  -ms-transition: all .3s;
+  -ms-transition: all .3s;
+  transition: all .3s;  
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden; /* Chrome and Safari */
+  -moz-backface-visibility:hidden; /* Firefox */
+  -ms-backface-visibility:hidden; /* Internet Explorer */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+
+.parents-options{
+	@include col(1/4);
+	font-size: rem(16);
+	
+	.currency{
+		@include col(1/2);
+		font-size: em(13);
+	}
+	
+	.language{
+		@include col(1/2);
+		font-size: em(13);
+	}
+}
+
+.purchase-menu{
+	@include col(3/4);
+	font-size: rem(16);
+	
+	ul{
+		float: right;
+		li{
+			font-size: em(13);
+			float:left;
+			display:list-item;
+			list-style: none;
+			
+			& a{
+				display:block;
+				text-decoration:none;	
+				margin-right: em(15);
+				@include transition (all 0.2s ease-in-out);
+				
+				&:hover{
+					color: $light-blue;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+aside {
+ @include col(1/3);
+ background: #1c893b;
+ font-size: rem(20);
+ 
+ 	p {
+	 font-size: em(20);	
+ 	}
+ 
+  @include breakpoint($desktop) {
+    @include col(2/3);
+  }
+}
+
+article {
+ @include col(2/3);
+ background: #1920e3;
+ font-size: rem(40);
+ 
+ 	h1 {
+	 font-size: em(20);	
+ 	}
+ 
+}
+
+
+
+header {
+  @include breakpoint($desktop) {
+    background: #333;
+  }
+}
+
+header {
+  @include breakpoint($mobile-small) {
+    background: #f80b0b;
+  }
+}
+
+header {
+  @include breakpoint($tablet) {
+    background: #ff00f2;
+  }
+}
+*/
+
+   
