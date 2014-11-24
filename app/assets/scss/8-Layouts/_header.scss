@@ -11,13 +11,6 @@
 	@extend %clearfix;
 }
 
-.header__top{
-	background-color: $black;
-	outline: 0 none !important;
-	border-bottom-color: #212121;
-	border-bottom: 1px solid #ebebeb;
-}
-
 /* Topbar */
 #topbar{
 	color: $white;
@@ -27,141 +20,138 @@
 	text-align: left;
 	text-transform: none;
 	padding-top: 2px;
-	line-height: 27px;
+	line-height: 22px;
+	outline: 0 none !important;
+	background-color: $black;
+	border-bottom-color: #212121;
+	border-bottom: 1px solid #ebebeb;
+	@extend %clearfix;
+			
+	a {
+		color: $white;
+		@include transition(color .3s ease);
+			
+		&:hover {
+			color: $gold;
+		}
+	}
+
+}
+
+#contact,
+#topbar-user {
+	@include col(1/2);
+	@extend %clearfix;
+}
+
+/* Lingua e Moeda */
+#topbar-user{
+	float: right;
 	@extend %clearfix;
 	
-	/* Redes Sociais */
-	.contact-list{
-		@extend %clearfix;
+	ul{
+		float: right;
 		
-		& li {
-			font-size: em(20);
-			float: left;
-			padding-right: 5px;
-				
-			& a {
-				color: $white;
-				margin: 4px;
-				display: inline-block;
-				line-height: normal;
+		li{
+			display: inline-block;
+			font-size: em(12);
+			padding-left: 10px;
+			text-transform: uppercase;
+			position: relative;
+			@extend %clearfix;
 			
-				& :hover {
-					color: $gold;
-				}
+			.lang-list--icon{
+				float: right;
+				font-size: .8em;
+				line-height: 22px;
+			}
+			
+			a i {
+				font-size: 8px;
+				margin-left: 2px;
 			}
 		}
-		
-		/* Telefone */
-		.contact-tel{
-			font-size: em(12);
+	}
+
+}
+
+/* Redes Sociais */
+.contact-list{
+	@extend %clearfix;
+	
+	li {
+		font-size: em(16);
+		float: left;
+		padding-right: 8px;
+			
+		a {
+			margin: 4px;
+			display: inline-block;
+			line-height: normal;
 		}
 	}
 	
-	/* Lingua e Moeda */
-	.topbar-lang,
-	.topbar-currency{
-		@extend %clearfix;
-		float: right;
-		
-		& li {
-			font-size: em(12);
-			float: right;
-			padding-left: 10px;
-			text-transform: uppercase;
-			
-			& a{
-				color: $white;
-			
-				& :hover {
-					color: $gold;
-				}
-			}
-		}
+	/* Telefone */
+	.contact-list--tel{
+		font-size: em(14);
 	}
 }
 
-#topbar__contact{
-	@include col(1/2);
+/* Top menu */
+/* Logo */
+#logo,
+#cart {
+	@include col(2/12);
 }
 
-/* Paises */
-#topbar__pais{
-	@include col(1/2);		
+#logo-img {
+	display: inline-block;
+	max-width: 100%;
 }
 
-
-
- 
-
-
-
-.float-right{
-  float: right;
-}
-.fa{
- font-size: .8em;
-  line-height: 22px !important;
-}
-dropdown{
-   display: inline-block;
-   margin: 20px 50px; 
-}
-dropdown label, dropdown ul li{
-  display: block;
-  width: 200px;
-  background: #ECF0F1;
-  padding: 15px 20px;
-}
-dropdown label:hover, dropdown ul li:hover{
-  background: #336699;
-  color: white;
-  cursor: pointer;
-}
-dropdown label{
-  color: #336699;
-  border-left: 4px solid #336699;
-  border-radius: 0 5px 0 0; 
-  position: relative;
-  z-index: 2;
-}
-dropdown input{
-  display: none;
-}
-dropdown input ~ ul{
-  position: relative;
-  visibility: hidden;
-  opacity: 0;
-  top: -20px;
-  z-index: 1;
-}
-dropdown input:checked + label{
-  background: #336699;
-  color: white;
+#logo img {
+	vertical-align: middle;
+	border: 0;
+	height: auto;
+	width: auto;
 }
 
-dropdown input:checked ~ ul{
-  visibility: visible;
-  opacity: 1;
-  top: 0;
+/* Menu topo */
+.nav {
+	padding: 0px;
+	height: auto;
+	list-style: none;
+	font-size: rem(15);
+	@include col(8/12);
+	
+	> ul {
+		display: inline-block;
+		vertical-align: middle;
+		margin: 0;
+		height: 100%;
+		padding-left: 0px;
+		
+		li{
+			padding: 22px 15px;
+			display: inline-block;
+		}
+		
+		li a{
+			color: $black;
+			font-size: em(14);
+			text-transform: uppercase;
+			@include transition(color .3s ease);
+			
+			&:hover {
+				color: $gold;
+			}
+		}
+	}
+	
+	.active {
+		color: $gold-dark;
+	}
 }
-
-.animate{
-  -webkit-transition: all .3s;
-  -moz-transition: all .3s;
-  -ms-transition: all .3s;
-  -ms-transition: all .3s;
-  transition: all .3s;  
-  backface-visibility:hidden;
-  -webkit-backface-visibility:hidden; /* Chrome and Safari */
-  -moz-backface-visibility:hidden; /* Firefox */
-  -ms-backface-visibility:hidden; /* Internet Explorer */
-}
-
-
-
-
-
-
 
 
 

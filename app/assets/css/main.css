@@ -26,8 +26,8 @@
 /** Unstack an element. */
 /** Center an element on either or both axes. @requires A parent container with relative positioning. @param {string} [$direction=both] - Specify which axes to center the element on. */
 /** Apply a clearfix to an element. */
-.container:before, #topbar:before, #topbar .contact-list:before, #topbar .topbar-lang:before, #topbar .topbar-currency:before, .container:after, #topbar:after, #topbar .contact-list:after, #topbar .topbar-lang:after, #topbar .topbar-currency:after { content: " "; display: table; }
-.container:after, #topbar:after, #topbar .contact-list:after, #topbar .topbar-lang:after, #topbar .topbar-currency:after { clear: both; }
+.container:before, #topbar:before, #contact:before, #topbar-user:before, #topbar-user ul li:before, .contact-list:before, .container:after, #topbar:after, #contact:after, #topbar-user:after, #topbar-user ul li:after, .contact-list:after { content: " "; display: table; }
+.container:after, #topbar:after, #contact:after, #topbar-user:after, #topbar-user ul li:after, .contact-list:after { clear: both; }
 
 .container { display: block; margin-left: auto; margin-right: auto; float: none; }
 
@@ -121,9 +121,6 @@ input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0
 
 *, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
-a { color: gray; -webkit-transition: color 0.3s ease; -moz-transition: color 0.3s ease; -ms-transition: color 0.3s ease; -o-transition: color 0.3s ease; transition: color 0.3s ease; }
-a:hover { color: black; }
-
 ul { list-style: none; margin: 0px; padding: 0px; }
 
 body { background-color: #ffffff; color: #1b2026; font-family: "Rokkitt", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; font-weight: 400; font-style: normal; }
@@ -162,52 +159,50 @@ a:hover, a:not[class^="btn--"] { text-decoration: underline; }
 /* http: //live.yithemes.com/bishop/ */
 .container { width: 100%; max-width: 1170px; }
 
-.header__top { background-color: #1b2026; outline: 0 none !important; border-bottom-color: #212121; border-bottom: 1px solid #ebebeb; }
-
 /* Topbar */
-#topbar { color: #ffffff; font-size: 0.9375rem; font-style: normal; font-weight: 400; text-align: left; text-transform: none; padding-top: 2px; line-height: 27px; /* Redes Sociais */ /* Lingua e Moeda */ }
-#topbar .contact-list { /* Telefone */ }
-#topbar .contact-list li { font-size: 1.25em; float: left; padding-right: 5px; }
-#topbar .contact-list li a { color: #ffffff; margin: 4px; display: inline-block; line-height: normal; }
-#topbar .contact-list li a :hover { color: #b4ad82; }
-#topbar .contact-list .contact-tel { font-size: 0.75em; }
-#topbar .topbar-lang, #topbar .topbar-currency { float: right; }
-#topbar .topbar-lang li, #topbar .topbar-currency li { font-size: 0.75em; float: right; padding-left: 10px; text-transform: uppercase; }
-#topbar .topbar-lang li a, #topbar .topbar-currency li a { color: #ffffff; }
-#topbar .topbar-lang li a :hover, #topbar .topbar-currency li a :hover { color: #b4ad82; }
+#topbar { color: #ffffff; font-size: 0.9375rem; font-style: normal; font-weight: 400; text-align: left; text-transform: none; padding-top: 2px; line-height: 22px; outline: 0 none !important; background-color: #1b2026; border-bottom-color: #212121; border-bottom: 1px solid #ebebeb; }
+#topbar a { color: #ffffff; -webkit-transition: color 0.3s ease; -moz-transition: color 0.3s ease; -ms-transition: color 0.3s ease; -o-transition: color 0.3s ease; transition: color 0.3s ease; }
+#topbar a:hover { color: #b4ad82; }
 
-#topbar__contact { *zoom: 1; float: left; clear: none; text-align: inherit; width: 48.5%; margin-left: 0%; margin-right: 3%; }
-#topbar__contact:before, #topbar__contact:after { content: ''; display: table; }
-#topbar__contact:after { clear: both; }
-#topbar__contact:last-child { margin-right: 0%; }
+#contact, #topbar-user { *zoom: 1; float: left; clear: none; text-align: inherit; width: 48.5%; margin-left: 0%; margin-right: 3%; }
+#contact:before, #contact:after, #topbar-user:before, #topbar-user:after { content: ''; display: table; }
+#contact:after, #topbar-user:after { clear: both; }
+#contact:last-child, #topbar-user:last-child { margin-right: 0%; }
 
-/* Paises */
-#topbar__pais { *zoom: 1; float: left; clear: none; text-align: inherit; width: 48.5%; margin-left: 0%; margin-right: 3%; }
-#topbar__pais:before, #topbar__pais:after { content: ''; display: table; }
-#topbar__pais:after { clear: both; }
-#topbar__pais:last-child { margin-right: 0%; }
+/* Lingua e Moeda */
+#topbar-user { float: right; }
+#topbar-user ul { float: right; }
+#topbar-user ul li { display: inline-block; font-size: 0.75em; padding-left: 10px; text-transform: uppercase; position: relative; }
+#topbar-user ul li .lang-list--icon { float: right; font-size: .8em; line-height: 22px; }
+#topbar-user ul li a i { font-size: 8px; margin-left: 2px; }
 
-.float-right { float: right; }
+/* Redes Sociais */
+.contact-list { /* Telefone */ }
+.contact-list li { font-size: 1em; float: left; padding-right: 8px; }
+.contact-list li a { margin: 4px; display: inline-block; line-height: normal; }
+.contact-list .contact-list--tel { font-size: 0.875em; }
 
-.fa { font-size: .8em; line-height: 22px !important; }
+/* Top menu */
+/* Logo */
+#logo, #cart { *zoom: 1; float: left; clear: none; text-align: inherit; width: 14.16667%; margin-left: 0%; margin-right: 3%; }
+#logo:before, #logo:after, #cart:before, #cart:after { content: ''; display: table; }
+#logo:after, #cart:after { clear: both; }
+#logo:last-child, #cart:last-child { margin-right: 0%; }
 
-dropdown { display: inline-block; margin: 20px 50px; }
+#logo-img { display: inline-block; max-width: 100%; }
 
-dropdown label, dropdown ul li { display: block; width: 200px; background: #ECF0F1; padding: 15px 20px; }
+#logo img { vertical-align: middle; border: 0; height: auto; width: auto; }
 
-dropdown label:hover, dropdown ul li:hover { background: #336699; color: white; cursor: pointer; }
-
-dropdown label { color: #336699; border-left: 4px solid #336699; border-radius: 0 5px 0 0; position: relative; z-index: 2; }
-
-dropdown input { display: none; }
-
-dropdown input ~ ul { position: relative; visibility: hidden; opacity: 0; top: -20px; z-index: 1; }
-
-dropdown input:checked + label { background: #336699; color: white; }
-
-dropdown input:checked ~ ul { visibility: visible; opacity: 1; top: 0; }
-
-.animate { -webkit-transition: all .3s; -moz-transition: all .3s; -ms-transition: all .3s; -ms-transition: all .3s; transition: all .3s; backface-visibility: hidden; -webkit-backface-visibility: hidden; /* Chrome and Safari */ -moz-backface-visibility: hidden; /* Firefox */ -ms-backface-visibility: hidden; /* Internet Explorer */ }
+/* Menu topo */
+.nav { padding: 0px; height: auto; list-style: none; font-size: 0.9375rem; *zoom: 1; float: left; clear: none; text-align: inherit; width: 65.66667%; margin-left: 0%; margin-right: 3%; }
+.nav:before, .nav:after { content: ''; display: table; }
+.nav:after { clear: both; }
+.nav:last-child { margin-right: 0%; }
+.nav > ul { display: inline-block; vertical-align: middle; margin: 0; height: 100%; padding-left: 0px; }
+.nav > ul li { padding: 22px 15px; display: inline-block; }
+.nav > ul li a { color: #1b2026; font-size: 0.875em; text-transform: uppercase; -webkit-transition: color 0.3s ease; -moz-transition: color 0.3s ease; -ms-transition: color 0.3s ease; -o-transition: color 0.3s ease; transition: color 0.3s ease; }
+.nav > ul li a:hover { color: #b4ad82; }
+.nav .active { color: #827b4e; }
 
 /*
 

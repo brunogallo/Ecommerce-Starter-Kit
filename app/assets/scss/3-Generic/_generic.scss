@@ -11,16 +11,7 @@
 *:before {
 	@include box-sizing(border-box);
 }
-
-// links
-a {
-	color: gray;
-	@include transition(color .3s ease);
-		&:hover {
-			color: black;
-		}
-}
-
+			
 ul {
 	list-style: none;
 	margin: 0px;

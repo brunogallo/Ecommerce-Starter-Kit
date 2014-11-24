@@ -62,3 +62,21 @@
   margin-right: auto;
   float: none;
 }
+
+
+// -------------------------------------
+//	 Topbar animin effect
+//	 	 
+// -------------------------------------
+
+%topbar-animin {
+		  -webkit-transition: all .3s;
+		  -moz-transition: all .3s;
+		  -ms-transition: all .3s;
+		  -ms-transition: all .3s;
+		  transition: all .3s;  
+		  backface-visibility:hidden;
+		  -webkit-backface-visibility:hidden; /* Chrome and Safari */
+		  -moz-backface-visibility:hidden; /* Firefox */
+		  -ms-backface-visibility:hidden; /* Internet Explorer */
+}
