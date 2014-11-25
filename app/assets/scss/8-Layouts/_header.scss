@@ -117,28 +117,34 @@
 }
 
 /* Menu topo */
-.nav {
+#menu {
 	padding: 0px;
 	height: auto;
 	list-style: none;
 	font-size: rem(15);
 	@include col(8/12);
+
+}
+
+#menu-nav {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0;
+	height: 100%;
+	padding-left: 0px;
 	
-	> ul {
+	> li{
+		padding: 22px 15px;
 		display: inline-block;
-		vertical-align: middle;
-		margin: 0;
-		height: 100%;
-		padding-left: 0px;
-		
-		li{
-			padding: 22px 15px;
-			display: inline-block;
+			
+		&:hover .submenu {
+			display: block;
 		}
-		
-		li a{
+
+		> a{
 			color: $black;
-			font-size: em(14);
+			font-size: em(15);
 			text-transform: uppercase;
 			@include transition(color .3s ease);
 			
@@ -146,16 +152,80 @@
 				color: $gold;
 			}
 		}
-	}
 	
-	.active {
-		color: $gold-dark;
+		.active {
+			color: $gold-dark;
+		}
 	}
 }
 
+/* submenu topo */
+.submenu{
+	position: absolute;
+	display: none;
+	top: 59px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	border-top:solid 2px $gold;
+	border-bottom: solid 1px $grey;
+	@extend %clearfix;
+	@include transition(color .3s ease);
+}
 
+.submenu-nav{
+	width: 300px;
+	display: table;
+	overflow: hidden;
+	display: block;
+	float: left;
+	padding: 0 20px;
+	@extend %clearfix;
+	
+	.submenu-nav--title{
+		text-transform: uppercase;
+		line-height: 1.3em;
+		padding-top: 16px;
+		color: $black;
+	}
+	
+	li {
+		padding-bottom: 10px;
+		border-color: #cdcdcd;
+		@extend %clearfix;
+		
+		a{
+			@extend .submenu-nav--title;
+			color: darken($grey, 20);	
+			@include transition(color .3s ease);
+		
+			&:hover {
+				color: $gold;
+			}
+		}
+	}	
+}
 
-
+/* bg menu narguiles nacionais */
+.menu-narguiles {
+	.submenu{
+		width: 600px;
+	}
+	
+	.narguiles-nacionais{
+		background-image: url(http://live.yithemes.com/bishop/wp-content/uploads/sites/2/2014/06/Senza-titolo-42.jpg);
+		background-position: 100% 100%;
+		background-repeat: no-repeat;
+		min-height: 393px;
+	}
+	
+	/* bg menu narguiles internacionais */
+	.narguiles-internacionais{
+		background-image: url(http://live.yithemes.com/bishop/wp-content/uploads/sites/2/2014/06/26.jpg);
+		background-position: 100% 100%;
+		background-repeat: no-repeat;
+		min-height: 393px;
+	}
+}
 
 
 

@@ -26,8 +26,8 @@
 /** Unstack an element. */
 /** Center an element on either or both axes. @requires A parent container with relative positioning. @param {string} [$direction=both] - Specify which axes to center the element on. */
 /** Apply a clearfix to an element. */
-.container:before, #topbar:before, #contact:before, #topbar-user:before, #topbar-user ul li:before, .contact-list:before, .container:after, #topbar:after, #contact:after, #topbar-user:after, #topbar-user ul li:after, .contact-list:after { content: " "; display: table; }
-.container:after, #topbar:after, #contact:after, #topbar-user:after, #topbar-user ul li:after, .contact-list:after { clear: both; }
+.container:before, #topbar:before, #contact:before, #topbar-user:before, #topbar-user ul li:before, .contact-list:before, .submenu:before, .submenu-nav:before, .submenu-nav li:before, .container:after, #topbar:after, #contact:after, #topbar-user:after, #topbar-user ul li:after, .contact-list:after, .submenu:after, .submenu-nav:after, .submenu-nav li:after { content: " "; display: table; }
+.container:after, #topbar:after, #contact:after, #topbar-user:after, #topbar-user ul li:after, .contact-list:after, .submenu:after, .submenu-nav:after, .submenu-nav li:after { clear: both; }
 
 .container { display: block; margin-left: auto; margin-right: auto; float: none; }
 
@@ -194,15 +194,32 @@ a:hover, a:not[class^="btn--"] { text-decoration: underline; }
 #logo img { vertical-align: middle; border: 0; height: auto; width: auto; }
 
 /* Menu topo */
-.nav { padding: 0px; height: auto; list-style: none; font-size: 0.9375rem; *zoom: 1; float: left; clear: none; text-align: inherit; width: 65.66667%; margin-left: 0%; margin-right: 3%; }
-.nav:before, .nav:after { content: ''; display: table; }
-.nav:after { clear: both; }
-.nav:last-child { margin-right: 0%; }
-.nav > ul { display: inline-block; vertical-align: middle; margin: 0; height: 100%; padding-left: 0px; }
-.nav > ul li { padding: 22px 15px; display: inline-block; }
-.nav > ul li a { color: #1b2026; font-size: 0.875em; text-transform: uppercase; -webkit-transition: color 0.3s ease; -moz-transition: color 0.3s ease; -ms-transition: color 0.3s ease; -o-transition: color 0.3s ease; transition: color 0.3s ease; }
-.nav > ul li a:hover { color: #b4ad82; }
-.nav .active { color: #827b4e; }
+#menu { padding: 0px; height: auto; list-style: none; font-size: 0.9375rem; *zoom: 1; float: left; clear: none; text-align: inherit; width: 65.66667%; margin-left: 0%; margin-right: 3%; }
+#menu:before, #menu:after { content: ''; display: table; }
+#menu:after { clear: both; }
+#menu:last-child { margin-right: 0%; }
+
+#menu-nav { position: relative; display: inline-block; vertical-align: middle; margin: 0; height: 100%; padding-left: 0px; }
+#menu-nav > li { padding: 22px 15px; display: inline-block; }
+#menu-nav > li:hover .submenu { display: block; }
+#menu-nav > li > a { color: #1b2026; font-size: 0.9375em; text-transform: uppercase; -webkit-transition: color 0.3s ease; -moz-transition: color 0.3s ease; -ms-transition: color 0.3s ease; -o-transition: color 0.3s ease; transition: color 0.3s ease; }
+#menu-nav > li > a:hover { color: #b4ad82; }
+#menu-nav > li .active { color: #827b4e; }
+
+/* submenu topo */
+.submenu { position: absolute; display: none; top: 59px; padding-right: 0px; padding-bottom: 0px; border-top: solid 2px #b4ad82; border-bottom: solid 1px #cccccc; -webkit-transition: color 0.3s ease; -moz-transition: color 0.3s ease; -ms-transition: color 0.3s ease; -o-transition: color 0.3s ease; transition: color 0.3s ease; }
+
+.submenu-nav { width: 300px; display: table; overflow: hidden; display: block; float: left; padding: 0 20px; }
+.submenu-nav .submenu-nav--title, .submenu-nav li a { text-transform: uppercase; line-height: 1.3em; padding-top: 16px; color: #1b2026; }
+.submenu-nav li { padding-bottom: 10px; border-color: #cdcdcd; }
+.submenu-nav li a { color: #999999; -webkit-transition: color 0.3s ease; -moz-transition: color 0.3s ease; -ms-transition: color 0.3s ease; -o-transition: color 0.3s ease; transition: color 0.3s ease; }
+.submenu-nav li a:hover { color: #b4ad82; }
+
+/* bg menu narguiles nacionais */
+.menu-narguiles { /* bg menu narguiles internacionais */ }
+.menu-narguiles .submenu { width: 600px; }
+.menu-narguiles .narguiles-nacionais { background-image: url(http://live.yithemes.com/bishop/wp-content/uploads/sites/2/2014/06/Senza-titolo-42.jpg); background-position: 100% 100%; background-repeat: no-repeat; min-height: 393px; }
+.menu-narguiles .narguiles-internacionais { background-image: url(http://live.yithemes.com/bishop/wp-content/uploads/sites/2/2014/06/26.jpg); background-position: 100% 100%; background-repeat: no-repeat; min-height: 393px; }
 
 /*
 
