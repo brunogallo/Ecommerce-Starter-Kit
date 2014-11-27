@@ -99,8 +99,7 @@
 
 /* Top menu */
 /* Logo */
-#logo,
-#cart {
+#logo {
 	@include col(2/12);
 }
 
@@ -152,11 +151,12 @@
 				color: $gold;
 			}
 		}
-	
-		.active {
-			color: $gold-dark;
-		}
 	}
+}
+
+/* menu active class */
+.active {
+	color: $gold-dark;
 }
 
 /* submenu topo */
@@ -164,6 +164,7 @@
 	position: absolute;
 	display: none;
 	top: 59px;
+	width: 600px;
 	padding-right: 0px;
 	padding-bottom: 0px;
 	border-top:solid 2px $gold;
@@ -207,10 +208,6 @@
 
 /* bg menu narguiles nacionais */
 .menu-narguiles {
-	.submenu{
-		width: 600px;
-	}
-	
 	.narguiles-nacionais{
 		background-image: url(http://live.yithemes.com/bishop/wp-content/uploads/sites/2/2014/06/Senza-titolo-42.jpg);
 		background-position: 100% 100%;
@@ -227,16 +224,170 @@
 	}
 }
 
+/* bg menu acessórios */
+.menu-acessorios {
+	.acessorios-narguiles{
+		background-image: url(http://live.yithemes.com/bishop/wp-content/uploads/sites/2/2014/06/Senza-titolo-42.jpg);
+		background-position: 100% 100%;
+		background-repeat: no-repeat;
+		min-height: 393px;
+	}
+	
+	/* bg menu mangueiras */
+	.acessorios-mangueiras{
+		background-image: url(http://live.yithemes.com/bishop/wp-content/uploads/sites/2/2014/06/26.jpg);
+		background-position: 100% 100%;
+		background-repeat: no-repeat;
+		min-height: 393px;
+	}
+}
 
+.menu-essencias {	
+	/* bg menu essencias tabaco */
+	.essencias-tabaco{
+		background-image: url(http://live.yithemes.com/bishop/wp-content/uploads/sites/2/2014/06/Senza-titolo-42.jpg);
+		background-position: 100% 100%;
+		background-repeat: no-repeat;
+		min-height: 393px;
+	}
+	
+	/* bg menu essencias artificiais */
+	.essencias-artificial{
+		background-image: url(http://live.yithemes.com/bishop/wp-content/uploads/sites/2/2014/06/26.jpg);
+		background-position: 100% 100%;
+		background-repeat: no-repeat;
+		min-height: 393px;
+	}
+}
 
+.menu-carvao {	
 
+	.submenu{
+		width: 300px;
+	}
 
+	/* bg menu essencias tabaco */
+	.carvao-coco{
+		background-image: url(http://live.yithemes.com/bishop/wp-content/uploads/sites/2/2014/06/Senza-titolo-42.jpg);
+		background-position: 100% 100%;
+		background-repeat: no-repeat;
+		min-height: 393px;
+	}
+}
 
+/* Search home */
+#search{
+	@include col(1/12);
+	font-size: rem(15);
+	position: relative;
+	display: block;
+	vertical-align: middle;
+	
+	.search-form{
+		position: absolute;
+		display: block;
+		top: 59px;
+		right: 0px;
+		width: 600px;
+		padding: 16px 20px;
+		border-top:solid 2px $gold;
+		border-bottom: solid 1px $grey;
+		@extend %clearfix;
+	}
+		
+	> a{
+		padding: 22px 15px;
+		display: inline-block;
+		color: $black;
+		font-size: em(15);
+		text-transform: uppercase;
+		@include transition(color .3s ease);
+			
+		&:hover {
+			color: $gold;
+		}
+	}
+	
+	&:hover .search-form {
+		display: block;
+	}
+}
 
+/* Geral form  */
+.form-control {
+	width: 100%;
+	
+	label {
+		font-weight: 400;
+		text-transform: uppercase;
+		font-size: 12px;
+		padding: 0;
+		line-height: normal;
+		text-align: left;
+		display: inline-block;
+		max-width: 100%;
+		margin-bottom: 5px;
+		font-weight: 700;
+		width: 100%;
+	}
 
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	input[type="search"],
+	textarea {
+		@include col(9/12);
+		border-radius: 0;
+		-webkit-appearance: none;
+		height: 34px;
+		padding: 6px 12px;
+		font-size: em(15);
+		color: $black;
+		background-color: $white;
+		background-image: none;
+		border: 1px solid $grey;
+		-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+		-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+		transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	}
 
+	input[type="text"]:focus,
+	input[type="password"]:focus,
+	input[type="email"]:focus,
+	input[type="search"]:focus,
+	input[type="submit"]:focus,
+	textarea {
+		border-color: $gold;
+	}
+	
+	#form-submit{
+		@include col(3/12);
+		border-radius: 0;
+		-webkit-appearance: none;
+		height: 34px;
+		padding: 6px 12px;
+		font-size: em(15);
+		text-transform: uppercase;
+		text-align: center;
+		color: $blue-silver;
+		background-color: $white;
+		background-image: none;
+		border: 1px solid;
+		border-color: $blue-silver;
+		-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+		-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+		transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 
-
+		&:hover{
+			color: $white;
+			background-color: $blue-silver;
+			background: $blue-silver;
+		}
+	
+	}	
+	
+	
+}
 
 
 
